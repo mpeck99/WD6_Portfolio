@@ -1,0 +1,20 @@
+.product{
+    margin-top: 20px;
+}
+.product .product-info{
+    color: #7f7f7f;
+}
+.price{
+    font-weight: bold;
+    font-size: 18px;
+}
+.addCart{
+    background-color: #7f7f7f;
+    border-style: none;
+}
+.addCart:hover{
+    background-color: darkgray;
+}
+.jumboHeader{
+    height: 500px !important;
+}
