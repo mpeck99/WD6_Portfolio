@@ -10,7 +10,7 @@ config.vm.box = "ubuntu/trusty64"
 config.vm.network "private_network", ip: "127.0.0.1"  
 config.vm.network "forwarded_port", guest: 80, host: 8080
 config.vm.network "forwarded_port", guest: 443, host: 4443
-config.vm.network "forwarded_port", guest: 3306, host: 3306
+config.vm.network "forwarded_port", guest: 3000, host: 3000
 
 
 config.vm.synced_folder "./", "/var/www/html"
