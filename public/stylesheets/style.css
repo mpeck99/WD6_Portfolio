@@ -1,5 +1,6 @@
 .product{
     margin-top: 20px;
+    padding: 5px;
 }
 .product .product-info{
     color: #7f7f7f;
@@ -15,6 +16,12 @@
 .addCart:hover{
     background-color: darkgray;
 }
-.jumboHeader{
+.jumboHeader #carouselExampleIndicators .carousel-inner{
     height: 500px !important;
+}
+.navbar{
+    background: darkorange !important;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    color: darkslategrey !important;
 }
