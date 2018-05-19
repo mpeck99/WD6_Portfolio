@@ -25,3 +25,13 @@
 .carousel-control-next-icon, .carousel-control-prev-icon{
     color: darkslategrey !important;
 }
+.carousel-item img {
+    height: 500px;
+    width: 900px !important;
+    margin: 0 auto;
+    text-align: center;
+}
+.signup h1{
+    text-align: center;
+    margin: 20px;
+}
