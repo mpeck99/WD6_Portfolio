@@ -29,8 +29,10 @@ router.get('/shopping-cart',function (req,res,next) {
   if(!req.session.cart){
     res.render('shop/shopping-cart',{products:null});
   }
+  else{
   var cart = new Cart(req.session.cart);
   res.render('shop/shopping-cart',{products:cart.generateArray(),totalPrice:cart.totalPrice});
+  }
 });
 router.get('/checkout',function (req,res,next) {
 //  var errMsg = new req.flash('error')[0];
@@ -59,8 +61,8 @@ router.post('/checkout',function (req,res,next) {
      // req.flash('error',err.message);
       return res.redirect('/checkout');
     }
+    req.session.cart = null;
     req.flash('success', 'Checkout Successful!');
-    req.cart = null;
     res.redirect('/');
   });
 });
