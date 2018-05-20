@@ -14,17 +14,20 @@ var flash = require('connect-flash');
 var bodyParser = require('body-parser');
 var validator = require('express-validator');
 var MongoStore = require('connect-mongo')(session);
-
+var hbs = require('handlebars');
 // connecting to mongodb
 mongoose.connect('mongodb://localhost:27017/shopping');
 require('./config/passport');
+hbs.registerHelper("math", function(value, options)
+{
+  return parseInt(value) * 100;
+});
 // view engine setup
 app.engine('.hbs',expressHbs({defaultLayout: 'layout',extname:'.hbs'}));
 app.set('view engine', '.hbs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false }));
 app.use(validator());
-app.use(flash());
 app.use(session({
   secret: 'wd6secret',
   resave: false,
@@ -32,6 +35,7 @@ app.use(session({
   store: new MongoStore({ mongooseConnection :  mongoose.connection }),
   cookie: { maxAge: 180 * 60 *1000 }
 }));
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(logger('dev'));

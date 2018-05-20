@@ -4,9 +4,9 @@ var Product = require('../models/product');
 var Cart = require('../models/cart');
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  var successMsg = req.flash('success')[0];
   Product.find(function (err,docs) {
-
-      res.render('shop/index', { title: 'WD6', products: docs});
+      res.render('shop/index', { title: 'WD6', products: docs, successMsg : successMsg, noMessage: !successMsg});
   });
 });
 
@@ -33,10 +33,44 @@ router.get('/shopping-cart',function (req,res,next) {
   res.render('shop/shopping-cart',{products:cart.generateArray(),totalPrice:cart.totalPrice});
 });
 router.get('/checkout',function (req,res,next) {
+//  var errMsg = new req.flash('error')[0];
   if(!req.session.cart){
     res.redirect('shopping-cart');
   }
   var cart = new Cart(req.session.cart);
+
   res.render('shop/checkout',{total:cart.totalPrice});
 });
+
+router.post('/checkout',function (req,res,next) {
+  if(!req.session.cart){
+    res.redirect('shopping-cart');
+  }
+  var cart = new Cart(req.session.cart);
+  var stripe = require("stripe")("sk_test_HHstfepx1OdA0e9HjPgPbPEV");
+
+  stripe.charges.create({
+    amount: cart.totalPrice * 100,
+    currency: 'usd',
+    description: 'WD6 Charge',
+    source: req.body.stripeToken,
+  }, function (err,charge) {
+    if(err){
+     // req.flash('error',err.message);
+      return res.redirect('/checkout');
+    }
+    req.flash('success', 'Checkout Successful!');
+    req.cart = null;
+    res.redirect('/');
+  });
+});
+
 module.exports = router;
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  req.session.oldUrl = req.url;
+  res.redirect('/user/signin');
+}
