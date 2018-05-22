@@ -1,0 +1,41 @@
+<div class="container wish-list">
+    {{# if products}}
+        <div class="row">
+            <div class="col-md-6 offset-md-3
+     col-lg-6 offset-lg-3 col-sm-6 offset-sm-3">
+                <ul class="list-group">
+                    {{# each products}}
+                        <li class="list-group-item">
+                            <strong>{{this.item.title}} </strong>
+                            <span class="label label-success">${{this.price}}</span>
+                            <span class="badge badge-dark">{{ this.qty }}</span>
+                            <div class="btn-group">
+                                <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+                                    Action
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/remove/{{this.item._id}}">Remove Item</a> </li>
+                                </ul>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 offset-md-3
+     col-lg-6 offset-lg-3 col-sm-6 offset-sm-3">
+                <a href="#" type="button" class="btn btn-outline-success" >Checkout</a>
+            </div>
+        </div>
+    {{else}}
+        <div class="row">
+            <div class="col-md-6 offset-md-3
+     col-lg-6 offset-lg-3 col-sm-6 offset-sm-3">
+                <h2>No Items Saved! Why not add some!</h2>
+            </div>
+        </div>
+    {{/if}}
+</div>

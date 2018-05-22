@@ -23,6 +23,7 @@ hbs.registerHelper("math", function(value, options)
   return parseInt(value) * 100;
 });
 // view engine setup
+
 app.engine('.hbs',expressHbs({defaultLayout: 'layout',extname:'.hbs'}));
 app.set('view engine', '.hbs');
 app.use(bodyParser.json());

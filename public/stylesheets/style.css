@@ -38,3 +38,9 @@
 #checkout-form .form-group{
     margin: 5px;
 }
+.shopping-cart{
+    margin-top: 20px;
+}
+.fa-heart{
+    color: darkorange;
+}
