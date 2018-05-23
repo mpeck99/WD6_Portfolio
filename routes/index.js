@@ -53,6 +53,13 @@ router.get('/remove/:id',function (req,res,next) {
   req.session.cart = cart;
   res.redirect('/shopping-cart');
 });
+router.get('/remove-wishlist/:id',function (req,res,next) {
+  var productId = req.params.id;
+  var wishlist = new Wishlist(req.session.wishlist ? req.session.wishlist : {});
+  wishlist.removeItem(productId);
+  req.session.wishlist = wishlist;
+  res.redirect('/wishlist');
+});
 router.get('/wishlist',function (req,res,next) {
   if(!req.session.wishlist){
     res.render('shop/wish-list',{products:null});

@@ -10,6 +10,7 @@
                         <p class="card-text product-info">{{ this.item.description }}</p>
                         <div>
                             <div class="price float-left">${{ this.item.price }}</div>
+                            <a href="/remove-wishlist/{{this.item._id}}" class="btn btn-primary float-right addCart"><i class="far fa-trash-alt"></i></a>
                             <a href="/add-to-cart/{{this._id}}" class="btn btn-primary float-right addCart">Add to Cart</a>
                         </div>
                     </div>
