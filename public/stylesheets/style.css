@@ -9,12 +9,12 @@
     font-weight: bold;
     font-size: 18px;
 }
-.addCart{
+.addCart, .addWishlist{
     background-color: #7f7f7f;
     border-style: none;
 }
 .addCart:hover{
-    background-color: darkgray;
+    background-color: darkorange;
 }
 .jumboHeader #carouselExampleIndicators .carousel-inner{
     height: 500px !important;
@@ -43,4 +43,13 @@
 }
 .fa-heart{
     color: darkorange;
+}
+.removeWishlist{
+    margin-left: 10px;
+    background-color: #7f7f7f;
+    border-style: none;
+}
+.removeWishlist:hover{
+    margin-left: 10px;
+    background-color: darkorange;
 }
