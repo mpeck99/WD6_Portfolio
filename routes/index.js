@@ -54,21 +54,21 @@ router.get('/remove/:id',function (req,res,next) {
   res.redirect('/shopping-cart');
 });
 router.get('/wishlist',function (req,res,next) {
-  if(!req.session.cart){
+  if(!req.session.wishlist){
     res.render('shop/wish-list',{products:null});
   }
   else{
-    var wishlist= new Wishlist(req.session.cart);
+    var wishlist= new Wishlist(req.session.wishlist);
     res.render('shop/wish-list',{products:wishlist.generateArray(),totalPrice:wishlist.price});
   }
 });
 router.get('/shopping-cart',function (req,res,next) {
-  if(!req.session.cart){
+  if(!req.session.wishlist){
     res.render('shop/shopping-cart',{products:null});
   }
   else{
-  var cart = new Cart(req.session.cart);
-  res.render('shop/shopping-cart',{products:cart.generateArray(),totalPrice:cart.totalPrice});
+  var cart = new Cart(req.session.wishlist);
+  res.render('shop/shopping-cart',{products:cart.generateArray()});
   }
 });
 router.get('/checkout',function (req,res,next) {
