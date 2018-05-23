@@ -1,4 +1,4 @@
-module.exports = function Cart(wishItem) {
+module.exports = function Wishlist(wishItem) {
   this.items = wishItem.items || {};
   this.totalQty = wishItem.totalQty || 0;
   this.price= wishItem.price || 0;
@@ -12,7 +12,6 @@ module.exports = function Cart(wishItem) {
     //storedProduct.price = storedProduct.item.price * storedProduct.qty;
     this.totalQty++;
     //this.totalPrice += storedProduct.item.price;
-  };
   };
   this.removeItem = function (id) {
     this.totalQty -= this.items[id].qty;
