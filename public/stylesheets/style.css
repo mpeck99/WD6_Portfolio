@@ -31,7 +31,7 @@
     margin: 0 auto;
     text-align: center;
 }
-.signup h1{
+.signup h1,.sign-in h1{
     text-align: center;
     margin: 20px;
 }
@@ -39,7 +39,7 @@
     margin: 5px;
 }
 .shopping-cart{
-    margin-top: 20px;
+    margin-top: 50px;
 }
 .fa-heart{
     color: darkorange;
@@ -52,4 +52,20 @@
 .removeWishlist:hover{
     margin-left: 10px;
     background-color: darkorange;
+}
+.display-3 {
+    text-align: center;
+}
+.signInCover,.signUpCover {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/shoppi-14d4e.appspot.com/o/signin.jpg?alt=media&token=b44b77db-b9cf-4e3c-8f4b-1a9b892c5f6a');
+    width:100% !important;
+    background-size: cover;
+    height: 350px
+}
+.checkoutCover{
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/shoppi-14d4e.appspot.com/o/checkout.jpg?alt=media&token=2090c412-6ece-4094-9ea4-9b2165450cee');
+    width:100% !important;
+    background-size: cover;
+    height: 350px;
+    color: white;
 }

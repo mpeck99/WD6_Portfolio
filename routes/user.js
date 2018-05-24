@@ -38,7 +38,15 @@ router.post('/signin',passport.authenticate('local.signin',{
   failureRedirect: '/user/signin',
   failureFlash: true
 }));
+router.get('/profile',isLoggedIn,function (req,res,next) {
+//  var errMsg = new req.flash('error')[0];
+  if(!req.session.cart){
+    res.redirect('/user/profile');
+  }
+  var cart = new Cart(req.session.cart);
 
+  res.render('shop/checkout',{total:cart.totalPrice});
+});
 module.exports = router;
 
 function isLoggedIn(req,res,next){
