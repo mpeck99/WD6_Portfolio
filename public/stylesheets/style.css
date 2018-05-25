@@ -1,5 +1,6 @@
 .product{
     margin-top: 20px;
+    padding: 5px;
 }
 .product .product-info{
     color: #7f7f7f;
@@ -8,13 +9,63 @@
     font-weight: bold;
     font-size: 18px;
 }
-.addCart{
+.addCart, .addWishlist{
     background-color: #7f7f7f;
     border-style: none;
 }
 .addCart:hover{
-    background-color: darkgray;
+    background-color: darkorange;
 }
-.jumboHeader{
+.jumboHeader #carouselExampleIndicators .carousel-inner{
     height: 500px !important;
+}
+.navbar{
+    background: darkorange !important;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    color: darkslategrey !important;
+}
+.carousel-item img {
+    height: 500px;
+    width: 900px !important;
+    margin: 0 auto;
+    text-align: center;
+}
+.signup h1,.sign-in h1{
+    text-align: center;
+    margin: 20px;
+}
+#checkout-form .form-group{
+    margin: 5px;
+}
+.shopping-cart{
+    margin-top: 50px;
+}
+.fa-heart{
+    color: darkorange;
+}
+.removeWishlist{
+    margin-left: 10px;
+    background-color: #7f7f7f;
+    border-style: none;
+}
+.removeWishlist:hover{
+    margin-left: 10px;
+    background-color: darkorange;
+}
+.display-3 {
+    text-align: center;
+}
+.signInCover,.signUpCover {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/shoppi-14d4e.appspot.com/o/signin.jpg?alt=media&token=b44b77db-b9cf-4e3c-8f4b-1a9b892c5f6a');
+    width:100% !important;
+    background-size: cover;
+    height: 350px
+}
+.checkoutCover{
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/shoppi-14d4e.appspot.com/o/checkout.jpg?alt=media&token=2090c412-6ece-4094-9ea4-9b2165450cee');
+    width:100% !important;
+    background-size: cover;
+    height: 350px;
+    color: white;
 }

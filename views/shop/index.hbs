@@ -1,45 +1,32 @@
-<h1>Our Products</h1>
+{{> jumbotron }}
 <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="card product">
-            <img class="card-img-top image-responsive" src="../images/shoe.png" alt="Shoe">
-        <div class="card-body">
-            <h5 class="card-title">Shoe</h5>
-            <p class="card-text product-info">Lorem ipsum dolor sit amet, consectetur adipisicing               elit. Cum deleniti deserunt dolore ea eligendi ex fuga iure nostrum porro                       quaerat, quibusdam saepe sapiente sint soluta velit veritatis vitae voluptatibus,               voluptatum?</p>
-        <div>
-            <div class="price float-left">$67.00</div>
-            <a href="#" class="btn btn-primary float-right addCart">Add to Cart</a>
-        </div>
-
-        </div>
+    <div class="col-sm-6 com-md-4 offset-md-4 offset-sm-3">
+        <div id="success" class="alert alert-success" {{#if noMessage}}hidden{{/if}}>
+            {{ successMsg }}
         </div>
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="card product">
-            <img class="card-img-top image-responsive" src="../images/shoe.png" alt="Shoe">
-            <div class="card-body">
-                <h5 class="card-title">Shoe</h5>
-                <p class="card-text product-info">Lorem ipsum dolor sit amet, consectetur adipisicing               elit. Cum deleniti deserunt dolore ea eligendi ex fuga iure nostrum porro                       quaerat, quibusdam saepe sapiente sint soluta velit veritatis vitae voluptatibus,               voluptatum?</p>
-                <div>
-                    <div class="price float-left">$67.00</div>
-                    <a href="#" class="btn btn-primary float-right addCart">Add to Cart</a>
+</div>
+
+
+<div class="container">
+    <h1>Our Products</h1>
+<div class="row">
+{{# each products }}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="card product">
+                        <img class="card-img-top image-responsive" src={{ this.imagePath }} alt="{{this.title}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ this.title }}</h5>
+                            <p class="card-text product-info">{{ this.description }}</p>
+                            <div>
+                                <div class="price float-left">${{ this.price }}</div>
+
+                                <a href="/add-to-cart/{{this._id}}" class="btn btn-primary float-right addCart">Add to Cart</a>
+                            </div>
+                            <a class="nav-link float-right" href="/add-to-wish-list/{{this._id}}" role="button" aria-haspopup="true" aria-expanded="false" ><i class="fas fa-heart"></i></a>
+                        </div>
+                    </div>
                 </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="card product">
-            <img class="card-img-top image-responsive" src="../images/shoe.png" alt="Shoe">
-            <div class="card-body">
-                <h5 class="card-title">Shoe</h5>
-                <p class="card-text product-info">Lorem ipsum dolor sit amet, consectetur adipisicing               elit. Cum deleniti deserunt dolore ea eligendi ex fuga iure nostrum porro                       quaerat, quibusdam saepe sapiente sint soluta velit veritatis vitae voluptatibus,               voluptatum?</p>
-                <div>
-                    <div class="price float-left">$67.00</div>
-                    <a href="#" class="btn btn-primary float-right addCart">Add to Cart</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
+{{/each}}
+</div>
 </div>
