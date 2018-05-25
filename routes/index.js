@@ -3,6 +3,7 @@ var router = express.Router();
 var Product = require('../models/product');
 var Cart = require('../models/cart');
 var Wishlist = require('../models/wishlist');
+var Order = require('../models/order');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var successMsg = req.flash('success')[0];

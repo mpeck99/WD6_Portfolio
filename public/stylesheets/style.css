@@ -20,7 +20,11 @@
     height: 500px !important;
 }
 .navbar{
+    color: whitesmoke;
     background: darkorange !important;
+}
+.nav-item .nav-link a{
+    color: whitesmoke;
 }
 .carousel-control-next-icon, .carousel-control-prev-icon{
     color: darkslategrey !important;
