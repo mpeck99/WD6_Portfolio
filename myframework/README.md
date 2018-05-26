@@ -1,0 +1,1 @@
+To install this application just download it from FSO or if provided the

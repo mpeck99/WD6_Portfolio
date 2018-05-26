@@ -1,7 +1,11 @@
 body{
-    background-color: gray !important;
-    text-align: center;
+    background-color: lightgoldenrodyellow !important;
+    text-align: center !important;
+    margin:10px !important;
 }
 table{
-    color: #1b1e21;
+    color: #1b1e21 !important;
+}
+h1{
+    font-size: 28px !important;
 }

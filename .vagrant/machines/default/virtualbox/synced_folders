@@ -1,1 +1,1 @@
-{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"/Users/MorganPeck/Desktop/StudentGrades","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/MorganPeck/Desktop/StudentGrades","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"/Users/MorganPeck/Desktop/WD6/StudentGrades","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/MorganPeck/Desktop/WD6/StudentGrades","disabled":false,"__vagrantfile":true}}}

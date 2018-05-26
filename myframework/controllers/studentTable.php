@@ -31,15 +31,15 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $id = $row['studentid'];
         $_SESSION['student_id'] = $id;
-       // $students = array();
-        // array_push($row['studentid'],$row["studentname"],$row["studentpercent"],$row['studentlettergrade']);
+        //$students = array();
+        //$students.array_push($row['studentid'],$row["studentname"],$row["studentpercent"],$row['studentlettergrade']);
         echo  "
                <tr>
                <td >".$row["studentname"]."</td>
                <td>".$row["studentpercent"]."%</td>
                <td>".$row["studentlettergrade"]."</td>
                <td>
-               <a type=\"button\" class=\"btn btn-outline-dark\" href=\"updateStudent?id=".$row['studentid']."\">Update</a>
+               <a type=\"button\" class=\"btn btn-outline-dark\" href=\"updateStudent?id=".$row['studentid']."name=".$row['studentname']."grade=".$row['studentpercent']."\">Update</a>
                <a type=\"button\" class=\"btn btn-outline-dark\" href=\"deleteStudent?id=".$row['studentid']."\"> Delete</a>
                </tr>
                ";
